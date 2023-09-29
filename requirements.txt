@@ -1,4 +1,4 @@
-import streamlit as st
-import lightgbm as lgb
-import pandas as pd
-import numpy as np
+streamlit
+lightgbm
+pandas
+numpy
