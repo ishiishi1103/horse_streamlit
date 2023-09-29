@@ -5,7 +5,7 @@ import numpy as np
 
 def predict(data):
     # 保存したモデルを読み込み
-    booster = lgb.Booster(model_file='model_horse/model.txt')
+    booster = lgb.Booster(model_file='model/model.txt')
     X_test = data.drop(['着順','日付'], axis=1)
     y_pred = booster.predict(X_test)
 
