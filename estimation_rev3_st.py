@@ -56,7 +56,7 @@ def main():
     齢 = st.sidebar.number_input('齢', value=1, step=1)
     斤量 = st.sidebar.number_input('斤量', value=50.0)
     クラス = st.sidebar.selectbox('クラス', ['障害',  'G1', 'G2', 'G3', '(L)', 'OP', '3勝', '2勝','1勝', '新馬', '未勝利'])
-    芝ダート = st.sidebar.selectbox('芝・ダート', ['芝', 'ダート', '障害'])
+    芝ダート = st.sidebar.selectbox('芝・ダート', ['芝', 'ダ', '障害'])
     距離 = st.sidebar.number_input('距離', value=1000, step=100)
     回り = st.sidebar.selectbox('回り', ['右', '左'])
     馬場 = st.sidebar.selectbox('馬場', ['良', '稍重', '重', '不良'])
