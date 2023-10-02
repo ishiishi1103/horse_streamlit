@@ -46,29 +46,29 @@ def main():
     st.write('馬場差：前走の馬場状態との差を数値で入力すること。馬場は以下の通り数値化して差をとる。\n　良: 0, 稍重: 1, 重: 2, 不良: 3')
 
  # Input data collection
-    st.sidebar.header('1番人気のデータを入力してください')
+    st.header('1番人気のデータを入力してください')
 
     # サイドバーでの入力
-    馬番 = st.sidebar.number_input('馬番', value=1, step=1)
-    体重 = st.sidebar.number_input('体重', value=500)
-    体重変化 = st.sidebar.number_input('体重変化', value=0)
-    性 = st.sidebar.selectbox('性', ['牡', '牝', 'セ'])
-    齢 = st.sidebar.number_input('齢', value=1, step=1)
-    斤量 = st.sidebar.number_input('斤量', value=50.0)
-    クラス = st.sidebar.selectbox('クラス', ['障害',  'G1', 'G2', 'G3', '(L)', 'OP', '3勝', '2勝','1勝', '新馬', '未勝利'])
-    芝ダート = st.sidebar.selectbox('芝・ダート', ['芝', 'ダ', '障害'])
-    距離 = st.sidebar.number_input('距離', value=1000, step=100)
-    回り = st.sidebar.selectbox('回り', ['右', '左'])
-    馬場 = st.sidebar.selectbox('馬場', ['良', '稍重', '重', '不良'])
-    場id = st.sidebar.selectbox('場id', ['札幌', '函館', '福島', '新潟', '東京', '中山', '中京', '京都', '阪神', '小倉'])
-    距離差 = st.sidebar.number_input('距離差', value=0, step=50)
-    日付差 = st.sidebar.number_input('日付差', value=0, step=1)
-    オッズ1 = st.sidebar.number_input('オッズ1', value=1.0)
-    着順1 = st.sidebar.number_input('着順1', value=1, step=1)
-    前走通過順_平均= st.sidebar.number_input('通過順', value=1.0)
-    出走頭数 = st.sidebar.number_input('出走頭数', value=1, step=1)
-    斤量差 = st.sidebar.number_input('斤量差', value=0.0)
-    馬場差 = st.sidebar.number_input('馬場差', value=0)
+    馬番 = st.number_input('馬番', value=1, step=1)
+    体重 = st.number_input('体重', value=500)
+    体重変化 = st.number_input('体重変化', value=0)
+    性 = st.selectbox('性', ['牡', '牝', 'セ'])
+    齢 = st.number_input('齢', value=1, step=1)
+    斤量 = st.number_input('斤量', value=50.0, step=0.5)
+    クラス = st.selectbox('クラス', ['障害',  'G1', 'G2', 'G3', '(L)', 'OP', '3勝', '2勝','1勝', '新馬', '未勝利'])
+    芝ダート = st.selectbox('芝・ダート', ['芝', 'ダ', '障害'])
+    距離 = st.number_input('距離', value=1000, step=100)
+    回り = st.selectbox('回り', ['右', '左'])
+    馬場 = st.selectbox('馬場', ['良', '稍重', '重', '不良'])
+    場id = st.selectbox('場id', ['札幌', '函館', '福島', '新潟', '東京', '中山', '中京', '京都', '阪神', '小倉'])
+    距離差 = st.number_input('距離差', value=0, step=50)
+    日付差 = st.number_input('日付差', value=0, step=1)
+    オッズ1 = st.number_input('オッズ1', value=1.0, step=0.1)
+    着順1 = st.number_input('着順1', value=1, step=1)
+    前走通過順_平均= st.number_input('通過順', value=1.0)
+    出走頭数 = st.number_input('出走頭数', value=1, step=1)
+    斤量差 = st.number_input('斤量差', value=0.0, step=0.5)
+    馬場差 = st.number_input('馬場差', value=0)
 
     if st.button("予測する"):
         input_data = pd.DataFrame({
@@ -87,7 +87,7 @@ def main():
 
         # 予測結果を表示
         st.header("予測結果")
-        st.write(y_pred)
+        st.write("3着以内に入る確率:", y_pred)
 
 
 if __name__ == '__main__':
